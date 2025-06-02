@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-    output: "export",
+    // output: "export",
 
   // distDir: "out", // Output directory for static export
   // output: "export", // Enable static export  //commanded by Gowtham
