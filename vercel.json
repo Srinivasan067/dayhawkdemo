@@ -1,11 +1,21 @@
 {
   "version": 2,
-  "builds": [{
-    "src": "package.json",
-    "use": "@vercel/next"
-  }],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/" }
+    {
+      "src": "/_next/static/(?:[^/]+/pages|chunks|runtime|css|media)/.+",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ]
 }
